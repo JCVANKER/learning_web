@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#div1,#div2{
+			float:left;
+			width: 100px;
+			height: 35px;
+			margin: 10px;
+			padding:10px;
+			border:1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<!-- drop当一个元素或文本被拖放到一个有效的目标上时触发 -->
+	<!-- ondragover事件规定在何处放置被拖动的数据 -->
+	<div id="div1" ondrop="drop(event)" ondragover="dragover(event)">
+		<!-- ondragstart拖动元素时触发 -->
+		<span draggable="true" ondragstart="dragstart(event)" id="drag1">这是一个需要拖放的文本</span>
+	</div>
+	<div id="div2" ondrop="drop(event)" ondragover="dragover(event)"></div>
+</body>
+</html>
+<script>
+	//拖放开始，保存对象
+	function dragstart(event){
+		//dataTransfer.setData() 方法设置被拖数据的数据类型和值。
+		//在拖动img的时候，drag函数就会把img的id属性记录在事件中，记录值的类型是Text，值是可拖动元素（id ="drag1"）
+		event.dataTransfer.setData("Text", event.target.id);
+	}
+
+	function dragover(event){
+		//取消默认，设为可放置
+		event.preventDefault();
+	}
+	//拖动完成
+	function drop(event){
+		event.preventDefault();
+		//这里通过 dataTransfer.getData("testData") 方法获得被拖的数据，该方法返回在setData() 方法中设置为相同类型的任何数据。
+		var data = event.dataTransfer.getData("Text");
+		event.target.appendChild(document.getElementById(data));
+		event.dataTransfer.clearData();//清除数据
+	}
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        .row{
+            border-bottom: 1px solid #888;
+            height: 70px;
+            margin-left: 32px;
+            margin-right: 32px;
+            padding-top: 40px;
+            box-sizing: border-box;
+        }
+        .input{
+            border:none;
+            /*移动端宽度大多用百分比*/
+            width: 100%;
+            height: 20px;
+            font-size:16px;
+        }
+        .btn{
+            height: 50px;
+            margin-left: 32px;
+            margin-right: 32px;
+            margin-top: 32px;
+            background-color: #e3007f;
+            font-size: 24px;
+            text-align: center;
+            /*line-height和div的height相同时，文本垂直居中*/
+            line-height:50px;
+            color:white;
+            /*border-radius设置圆角*/
+            border-radius:8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <!-- placeholder="" 提示语 -->
+        <input class="input" type="text" placeholder="用户名" />
+    </div>
+    <div class="row">
+        <!-- placeholder="" 提示语 -->
+        <input class="input" type="password" placeholder="密码" />
+    </div>
+    <div class="btn">登录</div>
+</body>
+</html>

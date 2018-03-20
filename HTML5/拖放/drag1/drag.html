@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+    #div1{
+        width: 250px;
+        height: 140px;
+        border:1px solid #aaa;
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <p>拖动图片到矩形框中</p>
+    <div id="div1" ondragover="dragover(event)" ondrop="drop(event);"></div>
+    <img id="img1" draggable="true" src="cover.jpg" height="140" width="250" alt="" ondragstart="dragstart(event);"/>
+</body>
+</html>
+<script type="text/javascript">
+    //当开始拖动时，记录被拖动元素的id
+    function dragstart(ev){
+        ev.dataTransfer.setData("Text", ev.target.id);
+    }
+
+    function dragover(ev){
+        //阻止默认的拖放程序，默认是不允许放的，阻止之后就是允许放了
+        event.preventDefault();
+    }
+
+    function drop(ev){
+        var data = ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+</script>

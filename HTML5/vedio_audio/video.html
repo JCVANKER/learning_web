@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <!-- 指定大小，且带有用户控件的播放器 -->
+    <video width="320" height="240" controls="controls">
+        <source src="movie.ogg" type="video/ogg"/>
+        <source src="movie.mp4" type="video/mp4"/>浏览器不支持video!
+    </video>
+    <video src="movie.mp4" style="width:320px;height:240px;" controls="controls"></video>
+    <video width="320" height="240" autoplay="autoplay" loop="loop">
+        <source src="movie.ogg" type="video/ogg"/>
+        <source src="movie.mp4" type="video/mp4"/>浏览器不支持video!
+    </video>
+    <br />
+    <audio src="song.mp3" controls="controls"></audio>
+    <audio autoplay="autoplay" loop="loop">
+        <source src="song.wma" type="audio/ogg"/>
+        <source src="song.mp3" type="audio/mpeg"/>浏览器不支持audio标签
+    </audio>
+</body>
+</html>

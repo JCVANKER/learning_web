@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        div,p,label,input,span{
+            border:1px red solid;
+        }
+    </style>
+</head>
+<body>
+    <div>div独占一行(块级元素)</div>
+    <p>p独占一行(块级元素)</p>
+    <label for="">laber（内联元素）</label>
+    <input type="text" value="内联元素"/>
+    <label style="display:block" for="">display:block转化为块级元素，换行</label>
+    <span style="width: 100px;height: 200px;">span元素设置宽高无效，因为它默认是inline，inline没有宽高特性</span>
+    <span style="display:inline-block; width: 100px;height: 200px;">设置display:inline-block后不换行，但具有block的宽高特性</span>
+    <br />
+    <div style="display:inline-block">display:inline-block的div：不换行</div>
+    <span>span默认是inline,不换行</span>
+    <div>1 之后的2不显示</div>
+    <div style="display:none">2 不显示</div>
+    <div>3 之后的4隐藏了，但是占据位置</div>
+    <div style="visibility: hidden">4</div>
+    <div>5</div>
+</body>
+</html>

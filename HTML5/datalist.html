@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <!-- list属性与datalist的id属性相同-->
+    <input type="text" list="city" id="txtAddress"/>
+    <datalist id="city">
+        
+    </datalist>
+    <input type="button" name="submit" value="提交" onclick="a();" />
+</body>
+</html>
+<script type="text/javascript">
+    var citys=["北京","上海","广州","深圳","杭州"];
+    var obj = document.getElementById("city");
+    for(var i=0;i<citys.length;i++)
+    {
+        obj.innerHTML+='<option value="'+citys[i]+'"></option>';
+    }
+    function a(){
+        var obj = document.getElementById("txtAddress")
+        console.log(obj.value)
+   }
+</script>
