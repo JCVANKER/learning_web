@@ -1,0 +1,41 @@
+<!-- CSS的Float（浮动），会使元素向左或者向右移动，其周围的元素也会重新排列；
+	 元素的水平方向浮动，只能左右移动不能上下移动；
+	 浮动元素之前的元素不会受到影响；
+	 浮动元素之后的元素将围绕它；
+	 元素浮动之后，周围的元素会重新排列，为了避免这种情况，使用clear属性；
+	 clear属性指定元素两侧不能出现浮动元素；
+	 http://www.w3school.com.cn/cssref/pr_class_float.asp
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.thumbnail{
+			border:1px red solid;
+			float:left;
+			width: 100px;
+			height: 90px;
+			margin:5px;
+		}
+		.text_line{
+			clear:both;
+			margin-bottom:2px;
+		}
+	</style>
+</head>
+<body>
+	<h3>图书库</h3>
+	<p>试着调整窗口，看看当图片没有足够的空间会发生什么。</p>
+	<img class="thumbnail" width="107" height="90" alt="">
+	<img class="thumbnail" width="107" height="80" alt="">
+	<img class="thumbnail" width="116" height="90" alt="">
+	<img class="thumbnail" width="120" height="90" alt="">
+	<h3 class="text_line">第二行</h3>
+	<img class="thumbnail" width="107" height="90">
+	<img class="thumbnail" width="107" height="80">
+	<img class="thumbnail" width="116" height="90">
+	<img class="thumbnail" width="120" height="90">
+</body>
+</html>
