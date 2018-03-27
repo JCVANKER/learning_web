@@ -1,0 +1,38 @@
+<!-- http://www.w3school.com.cn/cssref/pr_box-shadow.asp -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+    .div_container{
+        display:flex;
+        flex-flow:row;
+        /*justify-content定义项目在主轴上的对齐方式;*/
+        justify-content: space-between;
+    }
+    #div1,#div2{
+        border: 1px red solid;
+        width: 100px;
+        height: 100px;
+        margin:2px;
+    }
+    #div1{
+        /*box-shadow: h-shadow v-shadow blur spread color inset;
+          水平方向（左到右正值）、垂直方向（上到下）、模糊、扩散、内外（默认外）
+        */
+        box-shadow: -2px -2px 8px 2px orange;
+    }
+    #div2{
+        /*多阴影*/
+        box-shadow: -2px -2px 8px 2px orange, 2px 2px 8px 2px blue;
+    }
+    </style>
+</head>
+<body>
+    <div class="div_container">
+        <div id="div1"></div>
+        <div id="div2"></div>
+    </div>
+</body>
+</html>
