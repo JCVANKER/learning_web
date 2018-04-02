@@ -1,0 +1,43 @@
+<!-- http://www.w3school.com.cn/cssref/pr_transform.asp -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div#container{
+			display:flex;
+			flex-flow: row;
+		}
+		div>.div1{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			border:1px solid red;
+			flex:1;
+			margin-top:120px;
+			margin-right: 5px;
+			margin-left:15px;
+		}
+		div.skew{
+			/*skew(x-angle,y-angle)	定义沿着 X 和 Y 轴的 2D 倾斜转换。*/
+			transform: skew(20deg,20deg);
+		}
+		div.skewX{
+			/*skewX(angle)	定义沿着 X 轴的 2D 倾斜转换。*/
+			transform: skewX(20deg);
+		}
+		div.skewY{
+			/*skewY(angle)	定义沿着 Y 轴的 2D 倾斜转换。*/
+			transform:skewY(20deg);
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div class="div1 skew">skew</div>
+		<div class="div1 skewX">skewX</div>
+		<div class="div1 skewY">skewY</div>
+	</div>
+</body>
+</html>

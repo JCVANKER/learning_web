@@ -1,0 +1,41 @@
+<!-- http://www.runoob.com/cssref/css3-pr-flex.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.wrapper1{
+			display:flex;
+			flex-flow: row;
+		}
+		.wrapper2{
+			/*指定flex-flow:column时必须指定高度，项目的高度由flex属性决定比例*/
+			display:flex;
+			height:100px;
+			flex-flow: column;
+		}
+		/*div>p	选择父元素为 <div> 元素的所有 <p> 元素。*/
+		.wrapper1>div,.wrapper2>div{
+			height:30px;
+			line-height:30px;
+			text-align: center;
+			/*overflow属性：http://www.w3school.com.cn/cssref/pr_pos_overflow.asp*/
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper1">
+		<div style="background-color: #FFD700;flex:1">我在左边显示的文字</div>
+		<div style="background-color: #00BFFF;flex:1">我在中间显示的文字</div>
+		<div style="background-color: #FF69B4;flex:1">我在右边显示的文字</div>
+	</div>
+	<p></p>
+	<div class="wrapper2">
+		<div style="background-color: #FFD700;flex:1">我在左边显示的文字</div>
+		<div style="background-color: #00BFFF;flex:1">我在中间显示的文字</div>
+		<div style="background-color: #FF69B4;flex:1">我在右边显示的文字</div>
+	</div>
+</body>
+</html>
