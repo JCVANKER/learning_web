@@ -1,0 +1,34 @@
+<!-- http://www.w3school.com.cn/cssref/pr_transform.asp -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width:100px;
+			height: 100px;
+			background-color: yellow; 
+			display:inline-block;
+			margin:5px;
+		}
+		div.rotate{
+			/*rotate(angle)	定义 2D 旋转，在参数中规定角度。*/
+			transform:rotate(10deg);
+		}
+		div.rotateX{
+			/*rotateX(angle)	定义沿着 X 轴的 3D 旋转。*/
+			transform:rotateX(30deg);
+		}
+		div.rotateY{
+			/*rotateY(angle)	定义沿着 Y 轴的 3D 旋转。*/
+			transform:rotateY(30deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="rotate">rotate</div>
+	<div class="rotateX">rotateX</div>
+	<div class="rotateY">rotateY</div>
+</body>
+</html>
