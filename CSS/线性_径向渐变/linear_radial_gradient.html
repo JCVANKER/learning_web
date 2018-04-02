@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #ld{
+            clear:both;
+            margin-left:5px;
+            width: 200px;
+            height: 80px;
+            /*线性渐变：background:linear-gradient(direction,color-stop1,color-stop2,...)*/
+            background: linear-gradient(to bottom,red,blue);
+        }
+        #rd1{
+            width: 200px;
+            height: 80px;
+            background: radial-gradient(at 100px 100px,red,green);
+        }
+        #rd2{
+            width: 200px;
+            height: 80px;
+            background: radial-gradient(circle at center,red,green);
+        }
+        #rd3{
+            width: 200px;
+            height: 80px;
+            background: radial-gradient(at left top,red,green);
+        }
+        #rd4{
+            width: 200px;
+            height: 80px;
+            background: radial-gradient(red,orange,blue);
+        }
+        .div1{
+            float:left;
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="ld"></div>
+    <div id="rd1" class="div1"></div>
+    <div id="rd2" class="div1"></div>
+    <div id="rd3" class="div1"></div>
+    <div id="rd4" class="div1"></div>
+</body>
+</html>
