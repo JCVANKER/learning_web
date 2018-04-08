@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 256px;
+			height: 180px;
+			display:inline-block;
+			background: url(boy.jpg);
+			margin: 0 0 80px 5px;
+			font-weight:bold;
+		}
+		#id1{
+			transform:rotateX(30deg);
+		}
+		#id2{
+			transform:rotateY(30deg);
+		}
+		#id3{
+			transform:rotateZ(30deg);
+		}
+		#id4{
+			transform:rotateX(30deg) rotateY(30deg) rotateZ(30deg);
+		}
+	</style>
+</head>
+<body>
+	<h2>依次为rotateX, rotateY, rotateZ, 混合rotateXYZ旋转</h2>
+	<div id="id1">rotateX</div>
+	<div id="id2">rotateY</div>
+	<div id="id3">rotateZ</div>
+	<div id="id4">rotateXYZ</div>
+</body>
+</html>
+<script>
+	var obj1 = document.getElementById("id1");
+	var obj2 = document.getElementById("id2");
+	var obj3 = document.getElementById("id3");
+	var obj4 = document.getElementById("id4");
+	var i = 30;
+	function timedCount(){
+		i = i+2;
+		i = i % 360;
+
+		obj1.style.transform = "rotateX("+i+"deg)";
+		obj1.style.webkitTransform = "rotateX("+i+"deg)";
+
+		obj2.style.transform = "rotateY("+i+"deg)";
+		obj2.style.webkitTransform = "rotateY("+i+"deg)";
+
+		obj3.style.transform = "rotateZ("+i+"deg)";
+		obj3.style.webkitTransform = "rotateZ("+i+"deg)";
+
+		obj1.style.transform = "rotateX("+i+"deg)rotateY("+-i+"deg)rotateZ("+i+"deg)"
+		obj1.style.webkitTransform = "rotateX("+i+"deg)rotateY("+-i+"deg)rotateZ("+i+"deg)";
+
+		setTimeout("timedCount()",50);
+	}
+	timedCount();
+</script>
