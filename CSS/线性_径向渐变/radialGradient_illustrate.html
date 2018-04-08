@@ -1,0 +1,37 @@
+<!-- http://www.runoob.com/css3/css3-gradients.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 80px;
+			margin:5px;
+			display:inline-block;
+		}
+		div#rd1{
+			/*background: radial-gradient(center, shape size, start-color, ..., last-color);*/
+			/*默认情况下，渐变的中心是 center（表示在中心点），渐变的形状是 ellipse（表示椭圆形），渐变的大小是 farthest-corner（表示到最远的角落）。*/
+			background: radial-gradient(red,green,blue);
+		}
+		div#rd2{
+			background: radial-gradient(red 5%, green 15%, blue 60%);
+		}
+		div#rd3{
+			/*shape 参数定义了形状。它可以是值 circle 或 ellipse。其中，circle 表示圆形，ellipse 表示椭圆形。默认值是 ellipse*/
+			background: radial-gradient(circle,red,green,blue);
+		}
+		div#rd4{
+			background: repeating-radial-gradient(red, yellow 10%, green 15%);
+		}
+	</style>
+</head>
+<body>
+	<div id="rd1"></div>
+	<div id="rd2"></div>
+	<div id="rd3"></div>
+	<div id="rd4"></div>
+</body>
+</html>
