@@ -1,0 +1,74 @@
+<!-- http://www.w3school.com.cn/cssref/pr_transition.asp -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #id1{
+            width: 128px;
+            height: 128px;
+            background-color:blue;
+            margin:50px 0 50px 50px;
+            /*transition: property duration timing-function delay;*/
+            /*property:应用过渡的CSS3属性名称
+            duration:过渡效果花费时间
+            timing-function:效果的时间曲线，默认ease
+            delay:延迟*/
+            transition:all .5s ease-in .1s;
+        }
+        #id1:hover{
+            background-color: red;
+            border-radius:30px;
+            transform:rotate(45deg);
+        }
+        #id2{
+            width: 128px;
+            height: 96px;
+            margin:0 0 50px 50px;
+            position: relative;
+            box-shadow: 1px 1px 4px 2px grey;
+            cursor:pointer;
+        }
+        #id2 img{
+            /*absolute相对于已定义的父元素，不占据空间，可重叠；若此处没有设置，则两张图片不可重叠*/
+            position:absolute;
+            top:0px;
+            left:0px;
+            /*transition-property: 应用过渡到transform属性身上*/
+            transition:transform .5s ease .1s;
+        }
+        #id2 #img1{
+            width: 128px;
+            height: 96px;
+            transform-origin:left bottom;
+        }
+        #id2 #img2{
+            width: 128px;
+            height: 96px;
+            float:left;
+            transform-origin:right top;
+            /*初始缩放为0*/
+            transform:scale(0);
+        }
+        #id2:hover #img1{
+            /*当鼠标悬停时,缩放设置到0，即从有到无*/
+            transform:scale(0);
+        }
+        #id2:hover #img2{
+            /*当鼠标悬停时,缩放设置为1，即从无到有*/
+            transform:scale(1);
+        }
+    </style>
+</head>
+<body>
+    <h2>过渡效果：旋转、变色、圆角</h2>
+    <div id="id1"></div>
+    <hr />
+    <h2>悬浮图片切换效果</h2>
+    <div id="id2">
+        <img id="img1" src="1.jpg" alt="" />
+        <img id="img2" src="2.jpg" alt="" />
+    </div>
+</body>
+</html>

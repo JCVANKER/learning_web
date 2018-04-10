@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        #div1,#div2{
+            width: 80px;
+            height: 120px;
+            background-image:url(image/deck.png);
+            position:absolute;
+            margin:100px;
+            transition:transform 1s ease-in .1s;
+        }
+        #div1{
+            /*z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。
+            注释：元素可拥有负的 z-index 属性值。
+            注释：z-index使用前必须注明position:absolute*/
+            z-index:3;
+            /*隐藏被旋转的 div 元素的背面,默认为visible(背面即沿Y轴旋转180°)，可设置为hidden隐藏*/
+            backface-visibility: hidden;
+        }
+        #div2{
+            z-index:2;
+            background-position: 0 -480px;
+        }
+        #div1:hover,#div2:hover{
+            box-shadow: 0 0 50px red;
+        }
+    </style>
+</head>
+<body>
+    <div onclick="a();">
+        <div id="div1"></div>
+        <div id="div2"></div>
+    </div> 
+</body>
+</html>
+<script type="text/javascript">
+    var i = 1;
+    function a(){
+        document.getElementById("div1").style.transform ="rotateY("+180*i+"deg)";
+        document.getElementById("div2").style.transform ="rotateY("+180*i+"deg)";
+        i++;
+    }
+</script>
