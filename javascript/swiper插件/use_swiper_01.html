@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript" src="swiper/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="swiper/css/swiper.min.css" />
+    <style type="text/css">
+    .swiper-container{
+        height: 180px;
+        margin:20px auto;
+        width:auto;
+    }
+    .swiper-slide{
+        background-position: center;
+        /*把图像图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。*/
+        /*http://www.w3school.com.cn/cssref/pr_background-size.asp*/
+        background-size:contain;
+        background-repeat:no-repeat;
+    }
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(image/jd1.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(image/jd2.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(image/jd3.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(image/jd3.jpg)"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    var myswiper = new Swiper('.swiper-container',{
+            pagination:'.swiper-pagination',
+            paginationClickable:true,
+            prevButton:'.swiper-button-prev',
+            nextButton:'.swiper-button-next',
+            loop:true,
+            effect:'flip', //至少4张图
+            autoplay:2000,
+            autoplayDisableOnInteraction:false
+        });
+</script>
