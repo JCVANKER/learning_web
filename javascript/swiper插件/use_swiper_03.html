@@ -14,9 +14,12 @@
     }
     .x{
         position:relative;
-        
-        font-size:20px;
-        color:blue;
+        left:50%;
+        margin-left:-50px;
+        top:50%;
+        margin-top:-50px;
+        font-size:50px;
+        color:white;
     }
     .color-blue{
         background-color: blue;
@@ -33,15 +36,15 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide color-blue">
-                <div class="ani x" swiper-animate-effect='wobble' swiper-animate-duration='0.5s'
+                <div class="ani x" swiper-animate-effect='shake' swiper-animate-duration='0.5s'
                 swiper-animate-delay='0.3s'>内容</div>
             </div>
             <div class="swiper-slide color-red">
-                <div class="ani x" swiper-animate-effect='wobble' swiper-animate-duration='0.5s'
+                <div class="ani x" swiper-animate-effect='shake' swiper-animate-duration='0.5s'
                 swiper-animate-delay='0.3s'>内容</div>
             </div>
             <div class="swiper-slide color-yellow">
-                <div class="ani x" swiper-animate-effect='wobble' swiper-animate-duration='0.5s'
+                <div class="ani x" swiper-animate-effect='shake' swiper-animate-duration='0.5s'
                 swiper-animate-delay='0.3s'>内容</div>
             </div>
         </div>
@@ -56,6 +59,7 @@
     }, 
     onSlideChangeEnd: function(swiper){ 
       swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
-    } 
+    },
+    loop:true
   }) 
 </script>
