@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <script type="text/javascript" src="swiper/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="swiper/css/swiper.min.css" />
+    <style type="text/css">
+    html,body{
+        margin:0;
+        padding:0;
+        position:relative;
+        height:100%;
+    }
+    .gallery-top{
+        height:80%;
+        width: 100%;
+    }
+    .swiper-slide{
+        background-size:cover;
+        background-position: center;
+    }
+    .gallery-thumbs{
+        height:20%;
+        padding: 10px;
+    }
+    .gallery-thumbs .swiper-slide {
+        width: 25%;
+        /*opacity 属性设置元素的不透明级别。*/
+        opacity: 0.4;
+    }
+    .gallery-thumbs .swiper-slide-active {
+        opacity: 1;
+    }
+    </style>
+</head>
+<body>
+    <div class="swiper-container gallery-top">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(image/1.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(image/2.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(image/3.jpg)"></div>
+        </div>
+    </div>
+    <div class="swiper-container gallery-thumbs">
+        <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image:url(image/1.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(image/2.jpg)"></div>
+                <div class="swiper-slide" style="background-image:url(image/3.jpg)"></div>
+        </div>
+    </div>   
+</body>
+</html>
+<script type="text/javascript">
+    var galleryTop=new Swiper('.gallery-top');
+    var galleryThumbs  = new Swiper(".gallery-thumbs",{
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        slideToClickedSlide: true
+    });
+    galleryTop.params.control = galleryThumbs;
+    galleryThumbs.params.control = galleryTop;
+</script>
