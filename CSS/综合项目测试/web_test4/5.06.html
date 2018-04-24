@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <!-- 1. 使用Swiper Animate需要先加载swiper.animate.min.js和animate.min.css。 -->
+    <link rel="stylesheet" href="swiper/css/swiper.min.css">
+    <link rel="stylesheet" href="swiper/css/animate.min.css">
+    <script src="swiper/swiper.min.js"></script>
+    <script src="swiper/swiper.animate1.0.2.min.js"></script>
+    <style>
+    .x {
+        font-size: 60px;
+        color: red;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <!--3. 在需要运动的元素上面增加类名  ani   ，和其他的类似插件相同，Swiper Animate需要指定几个参数：
+				swiper-animate-effect：切换效果，例如 fadeInUp 
+				swiper-animate-duration：可选，动画持续时间（单位秒），例如 0.5s
+				swiper-animate-delay：可选，动画延迟时间（单位秒），例如 0.3s-->
+                <div class="ani x" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">内容</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+// 2. 初始化时隐藏元素并在需要的时刻开始动画。
+var mySwiper = new Swiper('.swiper-container', {
+    onInit: function(swiper) { 
+        swiperAnimateCache(swiper); //隐藏动画元素 
+        swiperAnimate(swiper); //初始化完成开始动画
+    },
+    onSlideChangeEnd: function(swiper) {
+        swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+    }
+})
+</script>
