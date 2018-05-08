@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    div {
+        border: 1px red solid;
+    }
+
+    .x {
+        font-size: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="div1">测试文本</div>
+    <button onclick="a();">方法1</button>
+    <button onclick="b();">方法2</button>
+    <button onclick="c();">方法3</button>
+</body>
+
+</html>
+<script>
+function a() {
+    document.getElementById("div1").style.height = '100px';
+
+    document.getElementById("div1").style['background-color'] = '#aaa';
+    //或者
+    document.getElementById("div1").style['backgroundColor'] = '#aaa';
+    //或者
+    document.getElementById("div1").style.backgroundColor = '#aaa';
+}
+
+function b() {
+    document.getElementById("div1").style.setProperty('height', '200px');
+}
+
+function c() {
+    document.getElementById("div1").className = 'x';
+}
+</script>

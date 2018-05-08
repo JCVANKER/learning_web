@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <div id="div2" class="c"></div>
+    <div id="div3" class="c"></div></body>
+</html>
+<script>
+var div1 = document.querySelector("#div1")
+div1.innerHTML = "此处为div1";
+document.write("<hr>");
+var c = document.querySelectorAll(".c");
+for (var i = 0; i < c.length; i++) {
+    document.write(c[i].id + "<br>");
+}
+</script>

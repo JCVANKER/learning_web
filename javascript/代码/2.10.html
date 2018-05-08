@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script type="text/javascript">
+//使用LocalStorage
+//如果没有定义pagecount，就是第一次访问
+if (null != localStorage.pagecount) {
+    localStorage.pagecount = Number(localStorage.pagecount) + 1;
+} else {
+    localStorage.pagecount = 1;
+}
+document.write("LocalStorage：已经访问了 " + localStorage.pagecount + " 次.<br/>");
+
+//使用sessionStorage，关闭浏览器后失效
+if (sessionStorage.pagecount) {
+    sessionStorage.pagecount = Number(sessionStorage.pagecount) + 1;
+} else {
+    sessionStorage.pagecount = 1;
+}
+document.write("SessionStorage：已经访问了 " + sessionStorage.pagecount + " 次.");
+</script>

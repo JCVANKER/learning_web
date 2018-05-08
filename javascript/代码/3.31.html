@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    div {
+        position: relative;
+        margin: 50px;
+        width: 80px;
+        height: 50px;
+        background: #92B901;
+        color: #ffffff;
+        border-radius: 5px;
+        animation: move 5s 3;
+    }
+
+    @keyframes move {
+        0% {
+            transform: rotate(0deg);
+            left: 0px;
+        }
+        25% {
+            transform: rotate(20deg);
+            left: 0px;
+        }
+        50% {
+            transform: rotate(0deg);
+            left: 300px;
+        }
+        70% {
+            transform: rotate(0deg);
+            left: 300px;
+            background: #1ec7e6;
+        }
+        100% {
+            transform: rotate(-360deg);
+            left: 0px;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+    <div>动画</div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    div {
+        background: #ccc;
+        float: left;
+        margin: 10px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .radius1 {
+        border-radius: 10px;
+    }
+
+    .radius2 {
+        border-radius: 10px 0px 30px 40px;
+    }
+
+    .radius3 {
+        border-radius: 50px 50px 0 0;
+    }
+
+    .radius4 {
+        border-radius: 50px 0 0 50px;
+    }
+
+    .radius5 {
+        border-radius: 100px 0 0 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="radius1">所有角半径10px;</div>
+    <div class="radius2">
+        左上:10px
+        <br>右上:0px
+        <br>右下:30px
+        <br>左下:40px
+    </div>
+    <div class="radius3">
+        这是一个上半圆
+    </div>
+    <div class="radius4">
+        这是一个左半圆
+    </div>
+    <div class="radius5">
+        1/4半圆
+    </div>
+</body>
+
+</html>

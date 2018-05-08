@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <!-- input元素的list值必须要对应到相关的 datalist的 id值-->
+    <input list="city" id="txtAddress" />
+    <datalist id="city">
+        <option value="北京"></option>
+        <option value="上海"></option>
+        <option value="广州"></option>
+        <option value="深圳"></option>
+        <option value="上饶"></option>
+    </datalist>
+    <input type="button" value="提交" onclick="a();">
+</body>
+
+</html>
+<script>
+function a() {
+    var obj = document.getElementById("txtAddress");
+    console.log(obj.value);
+}
+</script>

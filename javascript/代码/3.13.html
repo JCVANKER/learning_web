@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    .wrapper1 {
+        display: flex;
+        flex-flow: row;
+    }
+
+    .wrapper2 {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .wrapper1>div,
+    .wrapper2>div {
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper1">
+        <div style="background: #FFD700;flex:1">我在左边显示的文字</div>
+        <div style="background: #00BFFF;flex:2">我在中间显示的文字</div>
+        <div style="background: #FF69B4;flex:1">我在右边显示的文字</div>
+    </div>
+    <p></p>
+    <div class="wrapper2">
+        <div style="background: #FFD700;flex:1">我在上边显示的文字</div>
+        <div style="background: #00BFFF;flex:1">我在中间显示的文字</div>
+        <div style="background: #FF69B4;flex:1">我在下边显示的文字</div>
+    </div>
+</body>
+
+</html>

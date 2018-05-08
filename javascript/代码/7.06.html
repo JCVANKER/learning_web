@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <button id="btn1">获取json方法1</button>
+    <button id="btn2">获取json方法2</button>
+</body>
+
+</html>
+<script>
+$(document).ready(function() {
+    $("#btn1").click(function() {
+        var str = "";
+        $.ajax({
+            url: "txl.json", //json文件位置
+            type: "GET", //请求方式为get
+            dataType: "json", //返回数据格式为json
+            success: function(data) { //请求成功完成后要执行的方法 
+                //each循环 使用$.each方法遍历返回的数据date
+                $.each(data.lxr, function(i, item) {
+                    str += '姓名:' + item.name + '，性别：' + item.sex + '<br>';
+                })
+                $("div").html(str);
+            }
+        });
+    });
+
+    $("#btn2").click(function() {
+        var str = "";
+        $.getJSON("txl.json", function(data) {　 //each循环 使用$.each方法遍历返回的数据
+            $.each(data.lxr, function(i, item) {
+                str += '姓名:' + item.name + '，性别：' + item.sex + '<br>';
+            })
+            $("div").html(str);
+        });
+
+    });
+});
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    #div1,#div2 {
+        position: absolute;
+        margin: 10px;
+        width: 80px;
+        height: 120px;
+        transition: transform 2s;
+    }
+
+    #div1:hover,#div2:hover {
+        box-shadow: 0 0 50px red;
+    }
+
+    #div1 {
+        background-image: url('image/deck.png');
+        z-index: 3;
+        backface-visibility: hidden;
+    }
+
+    #div2 {
+        background-image: url('image/deck.png');
+        background-position: 0 -480px;
+        z-index: 2;
+    }
+    </style>
+</head>
+
+<body>
+    <div onclick="a();">
+        <div id="div1"></div>
+        <div id="div2"></div>
+    </div>
+</body>
+
+</html>
+<script>
+var i = 1;
+
+function a() {
+    document.getElementById("div1").style.transform = "rotateY(" + 180 * i + "deg)";
+    document.getElementById("div2").style.transform = "rotateY(" + 180 * i + "deg)";
+    i++;
+}
+</script>

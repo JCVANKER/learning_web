@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    #id1 {
+        width: 128px;
+        height: 128px;
+        margin: 50px;
+        background-color: blue;
+        transition: all .5s ease-in .1s;
+    }
+
+    #id1:hover {
+        background-color: gray;
+        transform: rotate(45deg);
+        border-radius: 10px;
+    }
+
+    #id2 {
+        width: 128px;
+        height: 96px;
+        margin: 50px;
+        position: relative;
+        box-shadow: 1px 1px 4px 2px gray;
+        cursor: pointer;
+    }
+
+    #id2 img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 128px;
+        height: 96px;
+        transition: transform .5s ease .1s;
+    }
+
+    #id2 #img1 {
+        transform-origin: left bottom;
+        transform: scale(1);
+    }
+
+    #id2 #img2 {
+        transform-origin: right top;
+        transform: scale( 0);
+    }
+
+    #id2:hover #img1 {
+        transform: scale(0);
+    }
+
+    #id2:hover #img2 {
+        transform: scale(1);
+    }
+    </style>
+</head>
+
+<body>
+    <h2>过渡效果:旋转、变色、圆角</h2>
+    <div id="id1">鼠标悬浮开始</div>
+    <hr>
+    <h2>悬浮图片切换效果</h2>
+    <div id="id2">
+        <img id="img1" src="image/i1.jpg" alt="">
+        <img id="img2" src="image/i2.jpg" alt="">
+    </div>
+</body>
+
+</html>

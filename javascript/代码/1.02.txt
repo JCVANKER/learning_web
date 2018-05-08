@@ -1,0 +1,3 @@
+﻿【演练1．2】安装package control组件。
+（1）启动Sublime Text，按Ctrl+`调出console。如图1-8所示，在下方（图中鼠标所在行）粘贴以下代码（读者可在配套资源中“1.02.txt”文件中复制）到命令行并回车。
+import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())

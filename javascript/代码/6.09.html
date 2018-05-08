@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title></title>
+    <style>
+    li {
+        position: relative;
+        list-style-type: none;
+        float: left;
+        margin: 10px;
+    }
+
+    .img {
+        position: relative;
+        width: 160px;
+        height: 160px;
+    }
+
+    .productName {
+        position: relative;
+        float: left;
+    }
+
+    .price {
+        position: relative;
+        float: right;
+        right: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <ul id="Products">
+    </ul>
+</body>
+
+</html>
+<script>
+//字符串里面准备申明一个JSON格式数据
+var obj1 = {
+    "Products": [{
+        "productName": "摩托罗拉",
+        "price": 1000.00,
+        "photo": "image/moto.jpg"
+    }, {
+        "productName": "三星",
+        "price": 3000.00,
+        "photo": "image/samsung.jpg"
+    }, {
+        "productName": "诺基亚",
+        "price": 2000.00,
+        "photo": "image/nokia.jpg"
+    }, {
+        "productName": "苹果",
+        "price": 2000.00,
+        "photo": "image/apple.jpg"
+    }]
+};
+
+s = '';
+for (i = 0; i < obj1.Products.length; i++) {
+    //针对每条记录动态生成li中的每一项
+    s += '<li>' +
+        '<div class="img">' + '<img src=' + obj1.Products[i].photo + '>' + '</div>' +
+        '<div class="productName">' + obj1.Products[i].productName + '</div>' +
+        '<div class="price">' + obj1.Products[i].price + '</div>' +
+        '</li>';
+}
+document.getElementById("Products").innerHTML = s;
+</script>

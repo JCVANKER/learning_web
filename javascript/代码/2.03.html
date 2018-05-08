@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <select id="city" size="4" multiple>
+        <option value="BJ">北京</option>
+        <option value="SH">上海</option>
+        <option value="GZ">广州</option>
+        <option value="SZ">深圳</option>
+    </select>
+    <input type="button" value="提交" onclick="a();">
+</body>
+
+</html>
+<script>
+function a() {
+    var obj = document.getElementById("city"); //获取指定id元素
+    var index = obj.selectedIndex; // 选中索引
+    if (index >= 0) {
+        var text = obj.options[index].text; // 选中项的文本
+        var value = obj.options[index].value; // 选中项的值
+        alert('索引：' + index + '  文本:' + text + '  值:' + value);
+    } else {
+        alert('请选择城市！')
+    }
+
+    // 针对多选可采用如下代码，在控制台观察结果
+    for (var i = 0; i < obj.options.length; i++) {
+        if (obj.options[i].selected) {
+            console.log("索引：" + i +
+                " 值：" + obj.options[i].value +
+                " 文本：" + obj.options[i].text
+            );
+
+        }
+    }
+}
+</script>

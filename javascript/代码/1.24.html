@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="openWin()">打开新窗口，3秒后将该窗口关闭</button>
+</body>
+
+</html>
+<script>
+function openWin() {
+    var myWindow = window.open("", "", "width=200, height=100");
+    myWindow.document.write("<p>这是一个新窗口'</p>");
+    setTimeout(function() { myWindow.close() }, 3000);
+}
+</script>

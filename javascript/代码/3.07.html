@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    div,
+    p,
+    label,
+    input,
+    span {
+        border: 1px red solid;
+        margin: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div>div独占一行</div>
+    <p>p独占一行</p>
+    <label for="">label不换行</label>
+    <input type="text" value="ipnut不换行">
+    <label for="" style="display: block;">label设置为换行</label>
+    <span style="width:100px;height: 100px">inline元素宽度、高度设置无效</span>
+    <span style="display:inline-block;width:200px;height: 200px">display:inline-block后inline元素宽度、高度有效</span>
+    <br>
+    <div style="display:inline-block">display:inline-block的DIV</div>
+    <span>display:inline-block的DIV后的inline元素不换行</span>
+    <div>1 之后的2不显示，也不占据位置</div>
+    <div style="display: none">2</div>
+    <div>3 之后的4隐藏了，但仍占据位置</div>
+    <div style="visibility: hidden">4</div>
+    <div>5</div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul id="ulPersons">
+        </ul>
+    </div>
+</body>
+
+</html>
+<script>
+var ulPersons = document.getElementById("ulPersons");
+var persons = [{ "name": "艾锋", "sex": "男" }, { "name": "李丽平", "sex": "女" }]
+var s = "";
+for (var i = 0; i < persons.length; i++) {
+    s += "<li>" + persons[i].name + "</li>";
+}
+ulPersons.innerHTML = s;
+</script>

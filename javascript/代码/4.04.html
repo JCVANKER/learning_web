@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title></title>
+    <style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .swiper-container {
+        width: 90%;
+        height: 220px;
+    }
+
+    .swiper-slide {
+        background-position: center;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .info-name {
+        box-sizing: border-box;
+        width: 100%;
+        height: 61px;
+        padding-top: 8px;
+        padding-left: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .info-name .name {
+        width: 100%;
+        height: 24px;
+        line-height: 24px;
+        color: #444;
+        font-size: 18px;
+    }
+
+    .info-name .description {
+        width: 100%;
+        height: 20px;
+        line-height: 20px;
+        color: #888;
+        font-size: 14px;
+    }
+
+    .info-price {
+        box-sizing: border-box;
+        width: 100%;
+        height: 61px;
+        padding-top: 8px;
+        padding-left: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .info-price .price {
+        width: 100%;
+        height: 24px;
+        line-height: 24px;
+        color: #e3007f;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+
+    .info-price .other {
+        display: flex;
+        width: 100%;
+        height: 20px;
+    }
+
+    .info-price .other div {
+        width: 100%;
+        height: 20px;
+        flex: 1;
+        line-height: 20px;
+        font-size: 14px;
+        color: #888;
+    }
+
+    .info-price .other .origin-price {
+        box-sizing: border-box;
+        padding-left: 8px;
+        text-align: left;
+    }
+
+    .info-price .other .unit {
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .info-price .other .place {
+        box-sizing: border-box;
+        padding-right: 16px;
+        text-align: right;
+    }
+
+    .info-discount {
+        box-sizing: border-box;
+        width: 100%;
+        height: 34px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .info-discount .name {
+        display: inline-block;
+        height: 15px;
+        margin-top: 8px;
+        margin-left: 8px;
+        color: #444;
+    }
+
+    .info-discount .value {
+        display: inline-block;
+        height: 15px;
+        line-height: 15px;
+        margin-top: 3px;
+        padding: 4px;
+        border-radius: 15px;
+        box-shadow: 0 1px 1px 1px #eee;
+        color: #fff;
+        background-color: #e3007f;
+    }
+
+    .push {
+        position: relative;
+        box-sizing: border-box;
+        padding-top: 8px;
+        width: 100%;
+        height: 60px;
+        text-align: center;
+        color: #888;
+        font-size: 12px;
+    }
+
+    .push .top {
+        height: 24px;
+        line-height: 24px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="info-name">
+        <div class="name">佳沛绿奇异果</div>
+        <div class="description">享受清爽汁水融入齿间感觉</div>
+    </div>
+    <div class="info-price">
+        <div class="price">¥18.9</div>
+        <div class="other">
+            <div class="origin-price">
+                <del >原价：99.8</del>
+            </div>
+            <div class="unit">规格：4件</div>
+            <div class="place">产地：中国</div>
+        </div>
+    </div>
+    <div class="info-discount">
+        <div class="name">优惠活动：</div>
+        <div class="value">全场满49元包邮</div>
+    </div>
+    <div class="push">
+        <div class="top">“亚当和夏娃都无法抵挡的禁果诱惑”</div>
+    </div>
+</body>
+
+</html>

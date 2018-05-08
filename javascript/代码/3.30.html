@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    #div1 {
+        position: relative;
+        background: url('image/bg01.jpg') no-repeat;
+        height: 100%;
+        width: 100%;
+        background-size: 100%;
+    }
+
+    #div2 {
+        position: fixed;
+        left: 50%;
+        bottom: 20%;
+        /*最左边在中线，图片宽度79，约等于80，左移40，所以设置 */
+        margin-left: -40px;
+        margin-left: -40px;
+        animation: move 1s infinite alternate;
+    }
+
+    @keyframes move {
+        from {
+            bottom: 20%;
+        }
+        to {
+            bottom: 10%;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+    </div>
+    <div id="div2">
+        <img id="img2" src="image/down.png" alt="">
+    </div>
+</body>
+
+</html>

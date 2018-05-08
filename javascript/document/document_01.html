@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+<body>
+    <div id="div1"></div>
+    <div id="div2" class="c"></div>
+    <div id="div3" class="c"></div>
+</body>
+</html>
+<script type="text/javascript">
+    var div1 = document.getElementById("div1");
+    div1.innerHTML="此处为div1";
+    document.write("<br>");
+    var c = document.getElementsByClassName("c");
+    for(var i=0;i<c.length;i++){
+        document.write(c[i].id+"<br>");
+    }
+</script>

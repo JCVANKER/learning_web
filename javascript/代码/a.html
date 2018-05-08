@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/doT.min.js"></script>
+    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<!-- 实例1:简单 -->
+<div id="interpolationtmpl">
+    <div>Hi {{=it.name}}!</div>
+    <div>{{=it.age || ''}}</div>
+</div>
+<hr/>
+<div id="interpolation"></div>
+<hr />
+
+<!-- 实例二:条件判断1 -->
+<div id="conditionstmpl">
+    {{? !it.name }}
+    <div> 你还没有名字</div>
+    {{?? }}
+    <div>Oh, I love your name, {{=it.name}}!</div>
+    {{?}}
+</div>
+<hr/>
+<div id="condition1"></div>
+<hr />
+
+<!-- 实例二:条件判断2 -->
+<div id="conditionstmp2">
+    {{ if(!it.name){ }}
+    <div> 你还没有名字</div>
+    {{ } else { }}
+    <div>Oh, I love your name, {{=it.name}}!</div>
+    {{ }  }}
+</div>
+<hr/>
+<div id="condition2"></div>
+<hr />
+<!-- 实例三:循环属性 值 -->
+<div id="evaluationtmpl">
+    {{ for(var prop in it) { }}
+        <div>KEY:{{= prop }}---VALUE:{{= it[prop] }}</div>
+    {{ } }}
+</div>
+<hr/>
+<div id="evaluation"></div>
+
+<hr />
+<!-- 实例四:for array iteration 数组 -->
+<div id="arrays"></div>
+<script id="arraystmpl" type="text/x-dot-template">
+    {{~it.array:value:index}}
+        <div>{{= index+1 }}{{= value }}!</div>
+    {{~}}
+</script>
+<!-- <div id="arraystmpl">
+    {{~it.array:value:index}}
+        <div>{{= index+1 }}{{= value }}!</div>
+    {{~}}
+</div> -->
+</body>
+
+</html>
+<script type="text/javascript">
+    // 实例1:简单
+    var dataInter = {"name": "Jake", "age": 31};
+    var interText = doT.template($("#interpolationtmpl").html());
+    $("#interpolation").html(interText(dataInter));
+ 
+    // 实例二:条件判断1
+    var dataEncode = {"name": "黄威", "age": 31};
+    var interText = doT.template($("#conditionstmpl").html());
+    $("#condition1").html(interText(dataEncode));
+
+    // 实例二:条件判断2
+    var dataEncode = {"name": "黄威", "age": 31};
+    var interText = doT.template($("#conditionstmp2").html());
+    $("#condition2").html(interText(dataEncode));
+
+    // 实例三:循环属性 值
+    var dataEval = {
+        "name": "Jake",
+        "age": 31,
+        "interests": ["basketball", "hockey", "photography"],
+        "contact": {"email": "jake@xyz.com", "phone": "999999999"}
+    };
+    var evalText = doT.template($("#evaluationtmpl").html());
+    $("#evaluation").html(evalText(dataEval));
+
+    // 实例四:for array iteration 数组
+    var dataArr = {"array":["banana","apple","orange"]};
+    var arrText = doT.template($("#arraystmpl").text());
+    $("#arrays").html(arrText(dataArr));
+</script>
+<!-- 
+doT.js特点是快，小，无依赖其他插件。压缩版仅有4K大小，最近使用dot的时候整理出这个dot.js教程api文档，是对dot.js的介绍和实例，希望能帮助到一部分需要的人。
+
+doT.js详细使用介绍
+使用方法：
+{{= }} for interpolation
+{{ }} for evaluation
+{{~ }} for array iteration
+{{? }} for conditionals
+{{! }} for interpolation with encoding
+{{# }} for compile-time evaluation/includes and partials
+{{## #}} for compile-time defines
+
+调用方式：
+var tmpText = doT.template(模板);
+tmpText(数据源);
+ -->

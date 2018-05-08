@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    div {
+        width: 320px;
+        height: 213px;
+        display: inline-block;
+        background: url('image/boy.jpg');
+        background-size: 320px 213px;
+        font-size: 30px;
+    }
+
+    #id1 {
+        transform: rotateX(30deg);
+    }
+
+    #id2 {
+        transform: rotateY(30deg);
+    }
+
+    #id3 {
+        transform: rotateZ(30deg);
+    }
+
+    #id4 {
+        transform: rotateX(30deg) rotateY(30deg) rotateZ(30deg);
+    }
+    </style>
+</head>
+
+<body>
+    <h2>依次为rotateX，rotateY，rotateZ，混合rotateXYZ旋转</h2>
+    <div id="id1">rotate X </div>
+    <div id="id2">rotate Y</div>
+    <div id="id3">rotate Z</div>
+    <div id="id4">rotate X Y Z</div>
+</body>
+
+</html>
+<script>
+var obj1 = document.getElementById("id1");
+var obj2 = document.getElementById("id2");
+var obj3 = document.getElementById("id3");
+var obj4 = document.getElementById("id4");
+var i = 30;
+
+function timedCount() {
+    i++;
+
+    obj1.style.transform = "rotateX(" + i + "deg)";
+
+    obj2.style.transform = "rotateY(" + i + "deg)";
+
+    obj3.style.transform = "rotateZ(" + i + "deg)";
+
+    obj4.style.transform = "rotateX(" + i + "deg) rotateY(" + i + "deg) rotateZ(" + i + "deg)";
+
+    setTimeout("timedCount()", 10);
+}
+timedCount();
+</script>

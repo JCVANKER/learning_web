@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    div {
+        width: 200px;
+        height: 100px;
+        float: left;
+    }
+
+    #rd1a {
+        background: radial-gradient(ellipse, red, green);
+    }
+
+    #rd1b {
+        background: radial-gradient(circle, red, green);
+    }
+
+    #rd2 {
+        background: radial-gradient(at 60px 60px, red, green);
+    }
+
+    #rd3 {
+        background: radial-gradient(at left top, red, green);
+    }
+
+    #rd4 {
+        background: radial-gradient(red, orange, blue);
+    }
+    </style>
+</head>
+
+<body>
+    <div id="rd1a">默认位置</div>
+    <div id="rd1b">默认位置</div>
+    <div id="rd2">指定位置</div>
+    <div id="rd3">left top等价于0 0</div>
+    <div id="rd4">太阳</div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="swiper/swiper.min.js"></script>
+    <link rel="stylesheet" href="swiper/css/swiper.min.css">
+    <style>
+    .swiper-container {
+        margin: 20px auto;
+        height: 180px;
+        width: auto;
+    }
+
+    .swiper-slide {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(image/jd1.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(image/jd2.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(image/jd3.jpg)"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</body>
+
+</html>
+<script>
+var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    loop: true,
+    effect: 'cube',
+    autoplay: 1000,
+    disableOnInteraction: false
+});
+</script>

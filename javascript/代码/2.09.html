@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #div1 {
+        width: 250px;
+        height: 140px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+    }
+    </style>
+</head>
+
+<body>
+    <p>拖动图片到矩形框中:</p>
+    <div id="div1" ondrop="drop(event)" ondragover="dragover(event)"></div>
+    <br>
+    <img id="drag1" src="image/cover.jpg" draggable="true" ondragstart="dragstart(event)" width="250" height="140">
+</body>
+
+</html>
+<script>
+function dragover(ev) {
+    ev.preventDefault();
+}
+
+function dragstart(ev) {
+    ev.dataTransfer.setData("Text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+    console.log(data);
+}
+</script>

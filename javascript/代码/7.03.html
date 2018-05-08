@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <p>test</p>
+    <ol>
+        <li>大学</li>
+        <li>中学</li>
+        <li>小学</li>
+    </ol>
+    <button id="btn1">添加文本</button>
+    <button id="btn2">添加列表项</button>
+    <button id="btn3">删除项</button>
+    <button id="btn4">清空项</button>
+    <button id="btn5">遍历方法1</button>
+    <button id="btn6">遍历方法2</button>
+</body>
+
+</html>
+<script>
+$(document).ready(function() {
+    $("#btn1").click(function() {
+        $("p").prepend("<b>开头</b>");
+        $("p").append(" <b>结尾</b>");
+    });
+
+    $("#btn2").click(function() {
+        $("ol").prepend("<li>开头</li>");
+        $("ol").append("<li>结尾</li>");
+    });
+
+    $("#btn3").click(function() {
+        $("li")[0].remove();
+    });
+
+    $("#btn4").click(function() {
+        $("ol").empty(); //ol中所有元素清空，ol还在
+        $("ol").remove(); //ol中所有元素清空，ol自身也清除了
+    });
+
+    $("#btn5").click(function() {
+        $("li").each(function() {
+            alert($(this).text())
+        });
+    });
+
+    $("#btn6").click(function() {
+        $("li").each(function(index,element) {
+            alert('第'+index+'项：'+$(element).text())
+        });
+    });
+});
+</script>

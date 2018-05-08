@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="myStop()">停止时间</button>
+    <p id="demo"></p>
+</body>
+
+</html>
+<script>
+var myVar = setInterval(function() { myTimer() }, 1000);
+
+function myTimer() {
+    var d = new Date();
+    var t = d.toLocaleTimeString();
+    document.getElementById("demo").innerHTML = t;
+}
+
+function myStop() {
+    clearInterval(myVar);
+}
+</script>

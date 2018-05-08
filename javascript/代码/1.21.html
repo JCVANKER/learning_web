@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="a();" id="btn1" onclick="a()">点击1</button>
+    <button onclick="a();" id="btn2">点击2</button>
+</body>
+
+</html>
+<script>
+function a() {
+    alert("事件触发方式1");
+}
+
+document.getElementById("btn2").onclick = function() {
+    alert("事件触发方式2");
+}
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <button>点我</button>
+    <div id="id1">test</div>
+</body>
+
+</html>
+<script>
+$(document).ready(function() {
+    $("button").click(function() {
+        $("#id1").css("color", "red")
+            .slideUp(1000)
+            .slideDown(1000);
+    });
+});
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+function x() {
+    console.log(1);
+}
+//调用x才执行，控制台输出1
+x();
+
+//函数匿名并且立即执行，控制台输出2
+(function() {
+    console.log(2);
+})();
+
+//函数匿名并且立即执行，a相当于console，控制台输出3
+(function(a) {
+    a.log(3);
+})(console);
+
+//函数匿名并且立即执行，$相当于console，控制台输出4
+//和前面几行代码对比，仅仅是a换为$，说明a、$不是关键字，可自行定义
+(function($) {
+    $.log(4);
+})(console);
+</script>

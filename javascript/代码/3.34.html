@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>媒体查询</title>
+    <style>
+    .wrap {
+        width: 100%;
+        float: left;
+    }
+
+    @media screen and (max-width: 1000px) {
+        .articles {
+            position: relative;
+            margin-right: 0px;
+        }
+        .aside {
+            display: none;
+        }
+    }
+
+    @media screen and (min-width: 1001px) {
+        .articles {
+            position: relative;
+            margin-right: 370px;
+        }
+
+        .aside {
+            width: 350px;
+            height: 100px;
+            background-color: gray;
+            float: left;
+            margin-left: -360px;
+            position: relative;
+            padding: 5px;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="articles">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto rem fugit, atque ex facilis molestiae voluptate magnam delectus facere labore quos, repudiandae sint maxime. Necessitatibus cumque animi fugit quo voluptatem quae quasi aperiam ullam sequi debitis id ad labore repudiandae, quod odit qui aspernatur architecto, voluptas, soluta nisi! Nisi consequatur molestiae repudiandae, qui quibusdam nobis laboriosam dolores iste eos sapiente numquam, est, quos dolor labore amet? Non aliquid obcaecati, excepturi recusandae, officia omnis natus dolor accusamus quo maiores. Dolorem vel consequuntur, nemo, repellendus distinctio illum ipsa excepturi eaque perspiciatis quis modi earum culpa saepe laudantium ad maiores eligendi dolores accusantium.
+        </div>
+    </div>
+    <div class="aside">
+        小屏幕时隐藏
+    </div>
+</body>
+
+</html>

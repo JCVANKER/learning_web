@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+    #img1 {
+        -webkit-mask-image: url('image/mask.png');
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: 0px 0px;
+    }
+    </style>
+</head>
+
+<body>
+    <img id="img1" src="image/boy.jpg">
+</body>
+
+</html>
+<script type="text/javascript">
+var x = 0,
+    y = 0,
+    movexright = true,
+    moveybottom = true;
+setInterval(function() {
+    if (movexright) { // X轴移动
+        x++;
+        if (x >= 640 - 260) {
+            movexright = false;
+        }
+    } else {
+        x--;
+        if (x <= 0) {
+            movexright = true;
+        }
+    }
+    if (moveybottom) { // Y轴移动
+        y++;
+        if (y >= 400 - 260) {
+            moveybottom = false;
+        }
+    } else {
+        y--;
+        if (y <= 0) {
+            moveybottom = true;
+        }
+    }
+    document.getElementById("img1").style.webkitMaskPosition = x + "px " + y + "px";
+}, 1);
+</script>

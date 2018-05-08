@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <label for="">用户名</label>
+    <input type="text" id="username">
+    <label for="">密码</label>
+    <input type="password" id="pwd">
+    <button onclick="login();">登录</button>
+</body>
+
+</html>
+<script type="text/javascript">
+if (localStorage.getItem("username") != null) {
+    alert("已经登录");
+}
+
+function login() {
+    var username = document.getElementById("username");
+    var pwd = document.getElementById("pwd");
+    if (username.value == "a" && pwd.value == "1") {
+        localStorage.username = username.value;
+        alert("登录成功！");
+    } else {
+        localStorage.removeItem("username");
+        alert("登录失败！");
+    }
+}
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>大学</li>
+        <li>中学</li>
+        <li>小学</li>
+    </ul>
+    <ol>
+    	<li>旅游</li>
+        <li>音乐</li>
+        <li>电影</li>
+    </ol>
+    <ul id="products">
+        
+    </ul>
+</body>
+
+</html>
+<script type="text/javascript">
+    for (var i = 0; i <3; i++) {
+       var obj=document.getElementById("products");
+       obj.innerHTML+='<li>商品信息<img style="width: 100px;height: 100px;" src="image/qyg2.jpg" /></li>';
+    };
+</script>

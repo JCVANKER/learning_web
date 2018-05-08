@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+function login(functionName, user, pwd) {
+    functionName(user, pwd);
+}
+
+function show(user, pwd) {
+    if (user == 1 && pwd == 1) {
+        alert('登录成功!');
+    } else {
+        alert('登录失败!');
+    }
+}
+
+login(show, 1, 1);
+</script>

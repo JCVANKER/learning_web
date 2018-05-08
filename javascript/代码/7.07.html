@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title></title>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <style>
+    html,
+    body {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+        background-color: #fdf3cf;
+        margin: 0;
+        padding: 0;
+    }
+
+    section {
+        position: relative;
+        height: auto;
+        flex: 1;
+        overflow: auto;
+    }
+
+    section .item {
+        position: relative;
+        width: auto;
+        height: auto;
+        margin: 16px;
+    }
+
+    section .item .icon {
+        position: absolute;
+        top: 0;
+        width: 40px;
+        height: 100%;
+        background-size: 40px 40px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border-radius: 20px;
+    }
+
+    section .question .icon {
+        left: 0;
+        background-image: url(image/user.png);
+    }
+
+    section .answer .icon {
+        right: 0;
+        background-image: url(image/missfresh.png);
+    }
+
+    section .item .content {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    section .item .arrow {
+        top: 50%;
+        margin-top: -5px;
+    }
+
+    section .question .arrow {
+        position: absolute;
+        left: 48px;
+        width: 0px;
+        height: 0px;
+        border-top: 5px solid;
+        border-bottom: 5px solid;
+        border-right: 20px solid;
+        border-color: transparent #fff transparent transparent;
+    }
+
+    section .answer .arrow {
+        position: absolute;
+        right: 48px;
+        width: 0px;
+        height: 0px;
+        border-top: 5px solid;
+        border-bottom: 5px solid;
+        border-left: 20px solid;
+        border-color: transparent transparent transparent #ffa5d8;
+    }
+
+    section .item .text {
+        position: relative;
+        box-sizing: border-box;
+        /*width: 80%;*/
+        padding: 8px;
+        height: auto;
+        font-size: 14px;
+        text-align: left;
+        line-height: 24px;
+        border-radius: 8px;
+    }
+
+    section .question .text {
+        background-color: #fff;
+    }
+
+    section .answer .text {
+        background-color: #ffa5d8;
+        /*left: 20%;*/
+    }
+
+    footer {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        background-color: #e3007f;
+    }
+
+    footer .row {
+        position: relative;
+        top: 11px;
+        width: 220px;
+        height: 28px;
+        margin: auto;
+        background-color: #fdf3cf;
+        background-image: url(image/footer.png);
+        background-repeat: no-repeat;
+        background-size: auto 22px;
+        background-position: center center;
+        border-radius: 14px;
+    }
+    </style>
+</head>
+
+<body>
+    <section id="section">
+    </section>
+    <footer>
+        <div class="row"></div>
+    </footer>
+</body>
+
+</html>
+<script>
+function a() {
+    var str = '';
+    $.ajax({
+        url: "chat.json", //json文件位置
+        type: "GET", //请求方式为get
+        dataType: "json", //返回数据格式为json
+        success: function(data) { //请求成功完成后要执行的方法 
+            //each循环 使用$.each方法遍历返回的数据date
+            $.each(data.chat, function(i, item) {
+                str +=
+                    '<div class="item question">' +
+                    '<div class="icon"></div>' +
+                    '<div class="content">' +
+                    '<div class="arrow"></div>' +
+                    '<div class="text">' + item.answer + '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="item answer">' +
+                    '<div class="icon"></div>' +
+                    '<div class="content">' +
+                    '<div class="arrow"></div>' +
+                    '<div class="text">' + item.question + '</div>' +
+                    '</div>' +
+                    '</div>';
+            });
+            // alert($("#section").html);
+            $("#section").html(str);
+        }
+    });
+};
+
+$(document).ready(function() {
+    a();
+});
+</script>
